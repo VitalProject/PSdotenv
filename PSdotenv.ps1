@@ -31,6 +31,3 @@
     }
     Write-Warning "$($inputvar): Not Found in .env"
 }
-
-
-[pscustomobject]@{test="Y";Nest="N"}
