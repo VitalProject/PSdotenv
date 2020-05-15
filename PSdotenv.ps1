@@ -1,8 +1,9 @@
-﻿function .env(){
+function .env(){
     param(
     [Parameter(Position = 0, Mandatory=$true)][ValidateScript({$_.Trim().length -gt 0})][string]$inputvar
     )
-    $dotenvcontent = get-content ".env" |where {$_ -like "$($inputvar)*"}
+    if(!($script:baseDir)){$script:baseDir = Split-Path $myinvocation.mycommand.path -Parent}
+    $dotenvcontent = get-content "$($script:baseDir)\.env" |where {$_ -like "$($inputvar)*"}
     foreach($item in $dotenvcontent){
             $splititem=$item.split("=",2)
         $varnamefull=$splititem[0].trim()
