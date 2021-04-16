@@ -1,3 +1,5 @@
+# https://github.com/VitalProject/PSdotenv
+# reads in variable data from the file named .env in the script directory
 function .env(){
     param(
     [Parameter(Position = 0, Mandatory=$true)][ValidateScript({$_.Trim().length -gt 0})][string]$inputvar
