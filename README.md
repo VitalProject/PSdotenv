@@ -5,7 +5,7 @@ It does so by parsing a txt file by line and then separating variables from valu
 
 # Getting started
 
-Any text file type is usuable but we suggest giving the file a .env extension
+The file needs to be named .env and be in the root script directory
 In the file put one variable per line using the following syntax
 
 ```VariableName=value```
